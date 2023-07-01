@@ -12,6 +12,7 @@
     "@apollo/client": "^3.7.15",
     "@emotion/react": "^11.10.5",
     "@geist-ui/core": "^2.3.8",
+    "@geist-ui/icons": "^1.0.2",
     "@hookform/resolvers": "^2.9.10",
     "@mantine/core": "^5.10.3",
     "@mantine/dates": "^5.10.3",

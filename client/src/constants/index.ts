@@ -1,13 +1,15 @@
 import {
   createCampaign,
   dashboard,
-  logout,
-  payment,
   profile,
   withdraw,
   notifications,
   chainlink,
 } from "../assets";
+
+import { Airplay } from '@geist-ui/icons'
+
+console.log(Airplay)
 
 export const navlinks = [
   {
