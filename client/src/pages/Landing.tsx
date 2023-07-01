@@ -1,7 +1,7 @@
 import VideoThumb from "@/public/images/hero-image.png";
 // import ModalVideo from '@/components/modal-video'
 import { Grid, Button } from "@geist-ui/core";
-
+import { ArrowRightCircle } from '@geist-ui/icons'
 export default function Hero() {
   return (
     <section
@@ -84,10 +84,10 @@ export default function Hero() {
                   </a> */}
                   <Grid.Container gap={4}>
                     <Grid className="space-x-4">
-                      <Button auto type="secondary" scale={1.25} >
-                        Success Light
+                      <Button auto type="secondary" scale={1.5} px={2} iconRight={<ArrowRightCircle/>} >
+                        Launch App
                       </Button>
-                      <Button auto type="abort"  scale={1.25} >proportion</Button>
+                      <Button auto type="secondary" ghost scale={1.5} px={2} 	>Learn More</Button>
                     </Grid>
                   </Grid.Container>
                 </div>
