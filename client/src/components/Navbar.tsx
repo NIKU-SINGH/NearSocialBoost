@@ -2,7 +2,6 @@ import { Image, Navbar as NavbarMantine, NavLink } from "@mantine/core";
 import { useNavigate } from "react-router-dom";
 import { navlinks } from "../constants";
 import { useAppState } from "../context";
-import { Grid, Card } from "@geist-ui/core";
 
 const Navbar = () => {
   const navigate = useNavigate();

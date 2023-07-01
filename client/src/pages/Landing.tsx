@@ -1,8 +1,8 @@
-import VideoThumb from "@/public/images/hero-image.png";
-// import ModalVideo from '@/components/modal-video'
 import { Grid, Button } from "@geist-ui/core";
 import { ArrowRightCircle } from '@geist-ui/icons'
+import { useNavigate } from "react-router-dom";
 export default function Hero() {
+  const navigate = useNavigate();
   return (
     <section
       className="relative h-screen"
@@ -84,10 +84,10 @@ export default function Hero() {
                   </a> */}
                   <Grid.Container gap={4}>
                     <Grid className="space-x-4">
-                      <Button auto type="secondary" scale={1.5} px={2} iconRight={<ArrowRightCircle/>} >
+                      <Button auto type="secondary" scale={1.5} px={2} iconRight={<ArrowRightCircle/>} onClick = {() => navigate('/home')}>
                         Launch App
                       </Button>
-                      <Button auto type="secondary" ghost scale={1.5} px={2} 	>Learn More</Button>
+                      <Button auto ghost scale={1.5} px={2} >Learn More</Button>
                     </Grid>
                   </Grid.Container>
                 </div>
