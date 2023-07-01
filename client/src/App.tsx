@@ -27,7 +27,7 @@ const App = () => {
                 <Routes>
                   <Route path="/home" element={<Home />} />
                   <Route path="/profile" element={<Profile />} />
-                  <Route path="/create-campaign" element={<CreateCampaign />} />
+                  <Route path="/campaign" element={<CreateCampaign />} />
                   <Route path="/campaign-details/:id" element={<CampaignDetails />} />
                   <Route path="/analyse" element={<EthBalance />} />
                   <Route path="/allnfts" element={<NFTList />} />

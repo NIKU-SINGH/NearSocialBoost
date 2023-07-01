@@ -20,7 +20,7 @@ export const navlinks = [
   {
     name: "campaign",
     imgUrl: createCampaign,
-    link: "/create-campaign",
+    link: "/campaign",
   },
   {
     name: "analyse",
@@ -35,16 +35,16 @@ export const navlinks = [
   {
     name: "Airdrop",
     imgUrl: withdraw,
-    link: "/claim",
+    link: "/airdrop",
     disabled: true
   },
   {
-    name: "my camps",
+    name: "profile",
     imgUrl: profile,
     link: "/profile"
   },
   {
-    name: "Claim NFTS",
+    name: "Claim NFTs",
     imgUrl: withdraw,
     link: "/claim",
   }
