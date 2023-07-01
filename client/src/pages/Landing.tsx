@@ -1,8 +1,10 @@
 import { Grid, Button } from "@geist-ui/core";
 import { ArrowRightCircle } from '@geist-ui/icons'
+import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 export default function Hero() {
   const navigate = useNavigate();
+  const titleRef = useRef()
   return (
     <section
       className="relative h-screen"
