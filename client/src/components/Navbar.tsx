@@ -33,8 +33,8 @@ const Navbar = () => {
                   navigate(link.link);
                 }
               }}
-              // className="rounded-full capitalize"
-              className={`bg-gray-200 capitalize  ${link.name === value? 'font-extrabold' : ''}`}
+              className="rounded-full capitalize"
+              // className={`bg-gray-200 capitalize  ${link.name === value? 'font-extrabold' : ''}`}
               icon={<Image src={link.imgUrl} />}
             />
           </div>
