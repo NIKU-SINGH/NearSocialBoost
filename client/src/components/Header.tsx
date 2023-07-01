@@ -10,6 +10,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { ologo, thirdweb } from "../assets";
 import { useAppState } from "../context";
 import "./Header.css";
+import { ConnectWallet } from "@thirdweb-dev/react";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -38,20 +39,7 @@ const Header = () => {
             onChange={(e) => {}}
           />
 
-          <Button
-            loading={isLoading}
-            onClick={async () => {
-              if (address) {
-                navigate("/create-campaign");
-              } else {
-                setIsLoading(true);
-                if (connect) await connect();
-                setIsLoading(false);
-              }
-            }}
-          >
-            {address ? `Create a Campaign` : `Connect`}
-          </Button>
+          <ConnectWallet />
 
           <Link to="/profile">
             <Avatar

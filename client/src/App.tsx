@@ -31,7 +31,6 @@ const App = () => {
                   <Route path="/campaign-details/:id" element={<CampaignDetails />} />
                   <Route path="/analyse" element={<EthBalance />} />
                   <Route path="/allnfts" element={<NFTList />} />
-                  {/* will be updated to manage the flow later */}
                 </Routes>
               </AppShell>
             }
