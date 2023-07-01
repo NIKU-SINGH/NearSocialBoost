@@ -8,7 +8,7 @@ import { NotificationsProvider } from "@mantine/notifications";
 import { StateProvider } from "./context";
 import { wagmiClient } from "./utils/wagmi_client";
 import { WagmiConfig } from "wagmi";
-import {Mumbai } from "@thirdweb-dev/chains";
+import { AuroraTestnet , Aurora } from "@thirdweb-dev/chains";
 
 const root = ReactDOM.createRoot(document.getElementById("root") as Element);
 
@@ -24,7 +24,7 @@ const apiKey = process.env.REACT_APP_LIVEPEER_API_KEY || "";
 
 
 root.render(
-  <ThirdwebProvider  activeChain={Mumbai}>
+  <ThirdwebProvider  activeChain={AuroraTestnet} >
     <WagmiConfig client={wagmiClient}>
       
       <MantineProvider
