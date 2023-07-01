@@ -28,6 +28,7 @@ const Header = () => {
         </div>
 
         <div className="flex items-center space-x-5">
+          
           <Input
             labelRight="🔍"
             placeholder="Search..."
