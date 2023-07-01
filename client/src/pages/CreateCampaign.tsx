@@ -1,4 +1,5 @@
-import { Alert, Container, Grid, Paper, Title } from "@mantine/core";
+import { Alert, Container, Grid, Paper} from "@mantine/core";
+import {Grid as GridGeist} from "@geist-ui/core"
 import { showNotification } from "@mantine/notifications";
 import { useNavigate } from "react-router-dom";
 import { z } from "zod";
@@ -7,6 +8,7 @@ import Form, { FormProps, FORM_ERROR } from "../components/Form";
 import LabeledTextField from "../components/FormField";
 import LabeledTextAreaField from "../components/TextAreaForm";
 import { useAppState } from "../context";
+import {Text} from "@geist-ui/core"
 
 export function CampaignForm<S extends z.ZodType<any, any>>(
   props: FormProps<S>
@@ -104,9 +106,9 @@ const CreateCampaign = () => {
   }
   return (
     <div>
-      <Title align="center" color="orange" order={1}>
+      <Text h2 className = "text-center">
         Start a Campaign
-      </Title>
+      </Text>
       <CampaignForm
         submitText="Submit new campaign"
         schema={CreateCampaignValidation}

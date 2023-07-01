@@ -3,7 +3,7 @@ import { FormProvider, useForm, UseFormProps } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Alert, Container, Group } from "@mantine/core";
-
+import {Button as ButtonGeist} from "@geist-ui/core";
 import { Button } from "@mantine/core";
 import { IconCircle } from "@tabler/icons-react";
 
@@ -71,9 +71,9 @@ export function Form<S extends z.ZodType<any, any>>({
         {submitText && (
           <Container>
             <Group position="center" mt="sm">
-              <Button type="submit" loading={ctx.formState.isSubmitting}>
+              <ButtonGeist type="secondary" ghost loading={ctx.formState.isSubmitting}>
                 {submitText}
-              </Button>
+              </ButtonGeist>
             </Group>
           </Container>
         )}
