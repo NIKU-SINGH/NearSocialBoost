@@ -8,7 +8,8 @@ import { NotificationsProvider } from "@mantine/notifications";
 import { StateProvider } from "./context";
 import { wagmiClient } from "./utils/wagmi_client";
 import { WagmiConfig } from "wagmi";
-import { AuroraTestnet , Aurora } from "@thirdweb-dev/chains";
+import { AuroraTestnet, Aurora } from "@thirdweb-dev/chains";
+import { GeistProvider, CssBaseline, Themes} from "@geist-ui/core";
 
 const root = ReactDOM.createRoot(document.getElementById("root") as Element);
 
@@ -17,16 +18,19 @@ const myCache = createEmotionCache({
   prepend: false,
 });
 
-
 const apiKey = process.env.REACT_APP_LIVEPEER_API_KEY || "";
 // console.log({ apiKey });
 
-
+const myTheme1 = Themes.createFromDark({
+  type: 'coolTheme',
+  palette: {
+    success: '#000',
+  },
+})
 
 root.render(
-  <ThirdwebProvider  activeChain={AuroraTestnet} >
+  <ThirdwebProvider activeChain={AuroraTestnet}>
     <WagmiConfig client={wagmiClient}>
-      
       <MantineProvider
         emotionCache={myCache}
         withGlobalStyles
@@ -40,17 +44,16 @@ root.render(
           },
         }}
       >
-        
         <NotificationsProvider position="top-right">
           <Router>
             <StateProvider>
-              
+              <GeistProvider themes={[myTheme1]} themeType="coolTheme">
+                <CssBaseline />
                 <App />
-              
+              </GeistProvider>
             </StateProvider>
           </Router>
         </NotificationsProvider>
-        
       </MantineProvider>
     </WagmiConfig>
   </ThirdwebProvider>
