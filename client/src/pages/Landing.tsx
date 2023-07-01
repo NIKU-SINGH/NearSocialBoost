@@ -1,14 +1,18 @@
 import { Grid, Button } from "@geist-ui/core";
 import { ArrowRightCircle } from '@geist-ui/icons'
+import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 export default function Hero() {
   const navigate = useNavigate();
+  const titleRef = useRef()
   return (
     <section
       className="relative h-screen"
       style={{
-        // background: "linear-gradient(rgb(17, 24, 39), rgb(75, 85, 99))",
-        // background: "linear-gradient(to left bottom, rgb(254, 249, 195), rgb(5, 150, 105), rgb(124, 58, 237))",
+        background: "url(https://github.com/tailwind/kite/assets/48355572/4bfa0c89-00a2-4322-9cf9-8fd911850aa0)",
+        backgroundRepeat: "repeat",
+        backgroundPosition: "center",
+        backgroundSize: "cover",
       }}
     >
       {/* Navabr content */}
@@ -21,7 +25,7 @@ export default function Hero() {
         className="absolute left-1/2 transform -translate-x-1/2 bottom-0 pointer-events-none -z-1"
         aria-hidden="true"
       >
-        <svg
+        {/* <svg
           width="1360"
           height="578"
           viewBox="0 0 1360 578"
@@ -41,10 +45,10 @@ export default function Hero() {
             </linearGradient>
           </defs>
           <g fill="url(#illustration-01)" fillRule="evenodd">
-            <circle cx="1232" cy="128" r="128" />
-            <circle cx="155" cy="443" r="64" />
+            <circle cx="1232" cy="250" r="128" />
+            <circle cx="135" cy="443" r="64" />
           </g>
-        </svg>
+        </svg> */}
       </div>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -55,20 +59,58 @@ export default function Hero() {
             <h1
               className="text-8xl p-4 md:text-9xl font-extrabold leading-tighter tracking-tighter mb-4"
               data-aos="zoom-y-out"
+              ref={titleRef}
             >
-              Make your website{" "}
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400">
-                wonderful
+              <div className="bg-clip-text text-transparent">
+
+
+              <span
+                className="span-anim py-1"
+                style={{
+                  color: "white",
+                  fontFamily: "'Gloock', serif" // Added font-family property
+                }}
+              >
+                <center><mark>NearSocialBoost</mark></center>
               </span>
+
+              <div style={{ display: 'flex' }}>
+                
+              <span
+                className="span-anim"
+                data-content="Fund"
+                style={{ "--start-color": "red", "--end-color": "orange", "--delay": 0, color: "white", marginRight: "30px" } as React.CSSProperties}
+              >
+                Fund
+              </span>
+
+              <span
+                className="span-anim"
+                data-content="Your"
+                style={{ "--start-color": "blue", "--end-color": "cyan", "--delay": 2, color: "white", marginRight: "30px" } as React.CSSProperties}
+              >
+                Your
+              </span>
+
+              <span
+                className="span-anim"
+                data-content="Future"
+                style={{ "--start-color": "green", "--end-color": "lime", "--delay": 4, color: "white", marginRight: "30px" } as React.CSSProperties}
+              >
+                Future
+              </span>
+            </div>
+
+                
+            </div>
             </h1>
-            <div className="max-w-3xl mx-auto">
+            <div className="max-w-4xl mx-auto">
               <p
-                className="text-xl text-gray-300 mb-8"
+                className="text-2xl text-gray-300 mb-12"
                 data-aos="zoom-y-out"
                 data-aos-delay="150"
               >
-                Our landing page template works on all devices, so you only have
-                to set it up once, and get beautiful results forever.
+                Empower Dreams, Securely Funded: Fund Your Future on <b>NEAR</b> Protocol <br/> Where Crowdfunding Meets NFTs for Social Good!
               </p>
               <div
                 className=" flex flex-wrap max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center"
@@ -84,7 +126,7 @@ export default function Hero() {
                   </a> */}
                   <Grid.Container gap={4}>
                     <Grid className="space-x-4">
-                      <Button auto type="secondary" scale={1.5} px={2} iconRight={<ArrowRightCircle/>} onClick = {() => navigate('/home')}>
+                      <Button auto ghost scale={1.5} px={2} iconRight={<ArrowRightCircle/>} onClick = {() => navigate('/home')}>
                         Launch App
                       </Button>
                       <Button auto ghost scale={1.5} px={2} >Learn More</Button>

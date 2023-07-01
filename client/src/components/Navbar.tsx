@@ -2,10 +2,18 @@ import { Image, Navbar as NavbarMantine, NavLink } from "@mantine/core";
 import { useNavigate } from "react-router-dom";
 import { navlinks } from "../constants";
 import { useAppState } from "../context";
+import { Grid, Card } from "@geist-ui/core";
+import { useState } from "react";
+import { useContext } from "react";
+import useButtonContext from "../context/buttonContext";
 
 const Navbar = () => {
   const navigate = useNavigate();
   const { disconnect } = useAppState();
+  const buttonToggle = useButtonContext((state) => state.togglePage)
+  const value = useButtonContext((state) => state.value)
+  console.log(buttonToggle,value)
+
   return (
     <NavbarMantine
       width={{ base: 180 }}
@@ -18,13 +26,15 @@ const Navbar = () => {
               label={link.name}
               disabled={link.disabled}
               onClick={() => {
+                buttonToggle(link.name)
                 if (link.name === "logout") {
                   disconnect && disconnect();
                 } else {
                   navigate(link.link);
                 }
               }}
-              className="rounded-full capitalize"
+              // className="rounded-full capitalize"
+              className={`bg-gray-200 capitalize  ${link.name === value? 'font-extrabold' : ''}`}
               icon={<Image src={link.imgUrl} />}
             />
           </div>
