@@ -1,4 +1,5 @@
-import { Grid, Loader, Title } from "@mantine/core";
+import { Grid, Title } from "@mantine/core";
+import {Loading} from "@geist-ui/core"
 import { useContractRead } from "@thirdweb-dev/react";
 import { ethers } from "ethers";
 import DisplayCampaigns, {
@@ -17,7 +18,7 @@ const Home = () => {
       </Title>
 
       {isLoading ? (
-        <Loader />
+        <Loading scale={3}/>
       ) : (
         <Grid>
           {data.map((item: DisplayCampaignsProps, i: number) => {
