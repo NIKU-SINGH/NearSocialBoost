@@ -17,11 +17,11 @@ const Navbar = () => {
   return (
     <NavbarMantine
       width={{ base: 180 }}
-      className="flex flex-col justify-between h-screen"
+      className="flex flex-col "
     >
       <div className="space-y-5 p-5 bg-black">
         {navlinks.map((link) => (
-          <div key={link.name} className="flex justify-center">
+          <div key={link.name} className="flex">
             <NavLink
               label={link.name}
               disabled={link.disabled}

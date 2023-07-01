@@ -1,3 +1,23 @@
 {
-  "rewrites": [{ "source": "/(.*)", "destination": "/" }]
+  "version": 2,
+  "builds": [
+    {
+      "src": "/client",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/client"
+    }
+  ],
+  "functions": {
+    "controllers/*.js": {
+      "maxDuration": 60
+    },
+    "middleware/**/*.js": {
+      "maxDuration": 60
+    }
+  }
 }
