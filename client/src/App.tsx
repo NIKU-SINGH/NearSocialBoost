@@ -11,6 +11,7 @@ import Profile from "./pages/Profile";
 import { AssetPriceContext, useAssetPrice } from '../src/context/AssetPriceContext';
 import { EthBalance } from '../src/pages/EthBalance';
 import { NFTList } from "./components/Nft/DisplayNFT";
+import NearSocialDao from "./pages/NearSocialDao";
 
 const App = () => {
   const assetPrice = useAssetPrice();
@@ -31,6 +32,7 @@ const App = () => {
                   <Route path="/campaign-details/:id" element={<CampaignDetails />} />
                   <Route path="/analyse" element={<EthBalance />} />
                   <Route path="/allnfts" element={<NFTList />} />
+                  <Route path="/dao" element={<NearSocialDao />} />
                 </Routes>
               </AppShell>
             }
