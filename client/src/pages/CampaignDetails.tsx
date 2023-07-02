@@ -1,12 +1,11 @@
 // @ts-nocheck
 import {
-  Card,
+  // Card,
   Container,
   Flex,
   Loader,
   LoadingOverlay,
-  Progress,
-  Text,
+  // Text,
   Title,
 } from "@mantine/core";
 import { showNotification } from "@mantine/notifications";
@@ -19,6 +18,7 @@ import { FORM_ERROR } from "../components/Form";
 import { FundForm } from "../components/FundForm";
 import { useAppState } from "../context";
 import { calculateBarPercentage, daysLeft } from "../utils";
+import { Progress, Grid ,Card, Text} from "@geist-ui/core";
 
 export const CreateFundValidation = z.object({
   amount: z.number().min(0.0000001),
@@ -59,27 +59,28 @@ const CampaignDetails = () => {
 
   return (
     <Container>
-      <Flex gap={5} justify="space-between">
+      {/* <Flex gap={5} justify="space-between"> */}
+      <div>
         <div>
-          <div>
-            <img
-              className="rounded-3xl  h-124 w-124  aspect-video"
-              src={typedState.image}
-              alt="Campaign"
-            />
+          <img
+            className="rounded-xl  h-124 w-124  aspect-video"
+            src={typedState.image}
+            alt="Campaign"
+          />
 
-            <div className="flex space-x-5 items-center my-5">
-              <Progress value={percent} className="w-full" />
+          <div className="flex space-x-5 items-center my-5">
+            {/* <Progress value={percent} className="w-full" /> */}
+            <Progress value={percent} type="warning" max={50} />
 
-              <Text className="whitespace-nowrap">{percent} %</Text>
-            </div>
+            <Text className="whitespace-nowrap">{percent} %</Text>
           </div>
-
-          <Title order={1}>{typedState.title}</Title>
         </div>
 
-        <div className="flex flex-col text-center space-y-5">
-          <Card radius="xl" p={0}>
+        <Title order={1}>{typedState.title}</Title>
+      </div>
+
+      <div className="flex flex-col text-center space-y-5">
+        {/* <Card radius="xl" p={0}>
             <Title p={15} order={2}>
               {typedState.amountCollected}
             </Title>
@@ -104,11 +105,47 @@ const CampaignDetails = () => {
             <Text bg="gray" p={15} className="rounded-lg mt-1 w-full">
               Total Backers
             </Text>
-          </Card>
-        </div>
-      </Flex>
+          </Card> */}
 
-      <div className="grid md:grid-cols-2 gap-5 ">
+        <Grid.Container gap={1.5}>
+          <Grid xs={12} justify="center">
+            <Card width="100%">
+              <Text h4 my={0}>
+                Geist UI React
+              </Text>
+              <Text>Modern and minimalist React UI library.</Text>
+              <Card.Footer>
+                <Link
+                  color
+                  target="_blank"
+                  href="https://github.com/geist-org/geist-ui"
+                >
+                  Visit source code on GitHub.
+                </Link>
+              </Card.Footer>
+            </Card>
+          </Grid>
+          <Grid xs={12} justify="center">
+            <Card width="100%" type="dark">
+              <Text h4 my={0}>
+                Geist UI React
+              </Text>
+              <Text>Modern and minimalist React UI library.</Text>
+              <Card.Footer>
+                <Link
+                  target="_blank"
+                  href="https://github.com/geist-org/geist-ui"
+                >
+                  Visit source code on GitHub.
+                </Link>
+              </Card.Footer>
+            </Card>
+          </Grid>
+        </Grid.Container>
+      </div>
+      {/* </Flex> */}
+
+      {/* <div className="grid md:grid-cols-2 gap-5 ">
         <div>
           <div>
             <Title order={3} mt={15}>
@@ -140,7 +177,6 @@ const CampaignDetails = () => {
             {!address ? (
               <Text>You need to connect your wallet to fund this campaign</Text>
             ) : (
-            
               <FundForm
                 submitText="Fund Campaign"
                 schema={CreateFundValidation}
@@ -177,7 +213,7 @@ const CampaignDetails = () => {
             )}
           </div>
         </div>
-      </div>
+      </div> */}
     </Container>
   );
 };
