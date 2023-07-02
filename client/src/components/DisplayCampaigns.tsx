@@ -75,8 +75,8 @@ const DisplayCampaigns = (item: DisplayCampaignsCardProps) => {
     //   </Card>
     // </Grid.Col>
     <div className="flex flex-wrap items-center justify-center ">
-      <div className="m-4 cursor-pointer hover:shadow-2xl hover:shadow-cyan-500/50 ">
-        <Card width="500px" onClick={handleCardClick}>
+      <div className="m-4 cursor-pointer hover:shadow-2xl hover:shadow-cyan-500/50 rounded-lg">
+        <Card width="400px" onClick={handleCardClick}>
           <img
             src={item.image}
             height="200px"
@@ -122,16 +122,9 @@ const DisplayCampaigns = (item: DisplayCampaignsCardProps) => {
             </div>
           </div>
 
-          <Card.Footer className="flex justify-between">
-            <Link
-              block
-              target="_blank"
-              href="https://github.com/geist-org/geist-ui"
-            >
-              Visit source code on GitHub.
-            </Link>
+          <Card.Footer className="flex justify-center items-center">
             <Button shadow type="secondary">
-              Shadow
+              Fund Project
             </Button>
           </Card.Footer>
         </Card>

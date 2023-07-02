@@ -8,8 +8,10 @@ import {
     useNFTBalance,
   } from '@thirdweb-dev/react';
   import { useState, useEffect, useMemo } from 'react';
-  import { Text,Button } from '@geist-ui/core';
+  import { Text,Button,Table, Radio } from '@geist-ui/core';
   import { AddressZero } from '@ethersproject/constants';
+
+  import '../components/NearSocialDao.css'
   
   const NearSocialDao = () => {
     // Use the hooks thirdweb give us.
@@ -176,9 +178,7 @@ import {
       return (
         <div className="landing">
           <Text h1 style = {{textAlign: 'center'}}>Welcome to Near Social Boost DAO</Text>
-          <Button type = "default" ghost>
-            <ConnectWallet theme='dark' />
-          </Button>
+            <ConnectWallet theme='light' />
         </div>
       );
     }
@@ -189,31 +189,17 @@ import {
       return (
         <div className="member-page">
           <Text h1>🍪DAO Member Page</Text>
-          <Text p>Congratulations on being a member</Text>
+          <Text blockquote>Congratulations on being a member!</Text>
           <div>
             <div>
-              <Text h2>Member List</Text>
-              <table className="card">
-                <thead>
-                  <tr>
-                    <Text p b>Address</Text>
-                    <Text p b>Token Amount</Text>
-                  </tr>
-                </thead>
-                <tbody>
-                  {memberList.map((member) => {
-                    return (
-                      <tr key={member.address}>
-                        <Text p>{shortenAddress(member.address)}</Text>
-                        <Text p>{member.tokenAmount}</Text>
-                      </tr>
-                    );
-                  })}
-                </tbody>
-              </table>
+              <Text h2 className = "text-center">Member List</Text>
+              <Table data = {memberList}>
+                <Table.Column prop = 'address' label = "Address" />
+                <Table.Column prop = 'tokenAmount' label = "Token Amount" />
+              </Table>
             </div>
             <div>
-              <Text h2>Active Proposals</Text>
+              <Text h2 className = "text-center">Active Proposals</Text>
               <form
                 onSubmit={async (e) => {
                   e.preventDefault();
@@ -304,7 +290,8 @@ import {
                     <Text h5>{proposal.description}</Text>
                     <div>
                       {proposal.votes.map(({ type, label }) => (
-                        <div key={type}>
+                        <div key={type} class = "radio-group">
+
                           <input
                             type="radio"
                             id={proposal.proposalId + '-' + type}
@@ -316,23 +303,28 @@ import {
                           <label htmlFor={proposal.proposalId + '-' + type}>
                             {label}
                           </label>
+
                         </div>
                       ))}
                     </div>
                   </div>
                 ))}
-                <button disabled={isVoting || hasVoted} type="submit">
+                <button disabled={isVoting || hasVoted} type="submit" class = "button-container">
+                  <Button ghost>
+
                   {isVoting
                     ? 'Voting...'
                     : hasVoted
                     ? 'You Already Voted'
                     : 'Submit Votes'}
+                  </Button>
                 </button>
+                <br />
                 {!hasVoted && (
-                  <small>
+                  <Text blockquote>
                     This will trigger multiple transactions that you will need to
                     sign.
-                  </small>
+                  </Text>
                 )}
               </form>
             </div>
