@@ -29,7 +29,7 @@ export function CampaignForm<S extends z.ZodType<any, any>>(
             <Grid.Col md={6}>
               <LabeledTextField
                 name="title"
-                label="Campaign Title"
+                label="Project Title"
                 placeholder="Write a Title"
                 required
               />
@@ -66,8 +66,8 @@ export function CampaignForm<S extends z.ZodType<any, any>>(
             <Grid.Col md={12}>
               <LabeledTextField
                 name="image"
-                label="Campaign Image "
-                placeholder="Place image url to represent your campaign"
+                label="Project Image "
+                placeholder="Place image url to represent your project"
                 required
               />
             </Grid.Col>
@@ -107,10 +107,10 @@ const CreateCampaign = () => {
   return (
     <div>
       <Text h2 className = "text-center">
-        Start a Campaign
+        List your new Project
       </Text>
       <CampaignForm
-        submitText="Submit new campaign"
+        submitText="List new project"
         schema={CreateCampaignValidation}
         initialValues={{}}
         onSubmit={async (values) => {
