@@ -28,11 +28,6 @@ export const navlinks = [
     link: "/analyse",
   },
   {
-    name: "notifications",
-    imgUrl: notifications,
-    link: "/notifications",
-  },
-  {
     name: "Airdrop",
     imgUrl: withdraw,
     link: "/airdrop",
