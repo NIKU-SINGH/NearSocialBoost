@@ -197,10 +197,10 @@ const CampaignDetails = () => {
         <div>
           <div className="my-6">
             {!address ? (
-              <Text>You need to connect your wallet to fund this campaign</Text>
+              <Text>You need to connect your wallet to fund this project</Text>
             ) : (
               <FundForm
-                submitText="Fund Project"
+                submitText="Fund this Project"
                 schema={CreateFundValidation}
                 initialValues={{}}
                 onSubmit={async (values) => {
