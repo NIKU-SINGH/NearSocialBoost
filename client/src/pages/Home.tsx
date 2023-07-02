@@ -17,7 +17,7 @@ const Home = () => {
       <Title align="center" mb={20}>
         All Campaigns
       </Title>
-
+{/* 
       <div className="flex flex-wrap items-center justify-center ">
         <div className="m-4 cursor-pointer hover:shadow-2xl hover:shadow-cyan-500/50 ">
           <Card width="500px">
@@ -76,10 +76,10 @@ const Home = () => {
             </Card.Footer>
           </Card>
         </div>
-      </div>
+      </div> */}
       
 
-      {/* {isLoading ? (
+      {isLoading ? (
         <Loading scale={3} />
       ) : (
         <Grid>
@@ -97,7 +97,7 @@ const Home = () => {
             );
           })}
         </Grid>
-      )} */}
+      )}
     </div>
   );
 };
