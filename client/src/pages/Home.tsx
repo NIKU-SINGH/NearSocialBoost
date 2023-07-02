@@ -82,7 +82,7 @@ const Home = () => {
       {isLoading ? (
         <Loading scale={3} />
       ) : (
-        <Grid>
+        <Grid className = "flex justify-center items-center h-full">
           {data.map((item: DisplayCampaignsProps, i: number) => {
             return (
               <DisplayCampaigns

@@ -18,7 +18,7 @@ const Navbar = () => {
     <div
       // width={{ base: 240 }}
       // height={{base:800}}
-      className="flex flex-col h-screen border-r-2 border-gray-700 "
+      className="flex flex-col max-h-full border-r-2 border-gray-700 "
     >
       <div className="space-y-5 p-5 w-64 h-full mt-20">
         {navlinks.map((link) => (

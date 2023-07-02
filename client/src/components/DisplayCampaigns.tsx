@@ -74,9 +74,9 @@ const DisplayCampaigns = (item: DisplayCampaignsCardProps) => {
     //     </Text>
     //   </Card>
     // </Grid.Col>
-    <div className="flex flex-wrap items-center justify-center ">
+    <div className="flex flex-wrap items-center justify-center w-[400px]">
       <div className="m-4 cursor-pointer hover:shadow-2xl hover:shadow-cyan-500/50 rounded-lg">
-        <Card width="400px" onClick={handleCardClick}>
+        <Grid width = "400px" onClick={handleCardClick} className = "flex flex-col justify-center items-center">
           <img
             src={item.image}
             height="200px"
@@ -127,7 +127,7 @@ const DisplayCampaigns = (item: DisplayCampaignsCardProps) => {
               Fund Project
             </Button>
           </Card.Footer>
-        </Card>
+        </Grid>
       </div>
     </div>
   );
