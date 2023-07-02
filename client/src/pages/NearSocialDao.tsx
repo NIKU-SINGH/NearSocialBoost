@@ -7,7 +7,6 @@ import {
     Web3Button,
     useNFTBalance,
   } from '@thirdweb-dev/react';
-  import { ChainId } from '@thirdweb-dev/sdk';
   import { useState, useEffect, useMemo } from 'react';
   import { AddressZero } from '@ethersproject/constants';
   
@@ -48,6 +47,8 @@ import {
     const shortenAddress = (str) => {
       return str.substring(0, 6) + '...' + str.substring(str.length - 4);
     };
+
+    console.log(network)
   
     const [proposals, setProposals] = useState([]);
     const [isVoting, setIsVoting] = useState(false);
@@ -156,7 +157,7 @@ import {
       });
     }, [memberAddresses, memberTokenAmounts]);
   
-    if (address && network?.[0].data.chain.chainId !== 1313161555) {
+    if (address && network?.[0].data.chain.id !== 1313161555) {
       return (
         <div className="unsupported-network">
           <h2>Please connect to Mumbai</h2>
