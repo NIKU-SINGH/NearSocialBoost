@@ -119,7 +119,7 @@ const CreateCampaign = () => {
               await createCampaign(values);
 
               console.log("values", values);
-              navigate("/home");
+              navigate("/dashboard");
             }
           } catch (error: any) {
             console.error(error);
