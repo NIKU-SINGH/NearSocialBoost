@@ -200,7 +200,7 @@ const CampaignDetails = () => {
               <Text>You need to connect your wallet to fund this campaign</Text>
             ) : (
               <FundForm
-                submitText="Fund Campaign"
+                submitText="Fund Project"
                 schema={CreateFundValidation}
                 initialValues={{}}
                 onSubmit={async (values) => {
