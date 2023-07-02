@@ -1,4 +1,5 @@
-![image](https://github.com/legendarykamal/NearSocialBoost/assets/95926324/38ddbda3-e000-4d4c-bd66-3f15ede7f8f8)
+
+![WhatsApp Image 2023-07-02 at 13 33 06](https://github.com/NIKU-SINGH/NearSocialBoost/assets/86917061/0224fc14-2274-4398-a8b7-bae0a915ac89)
 
 NearSocialBoost is a revolutionary crowdfunding application built on the Near blockchain that aims to fuel the success of projects building on the Near Protocol. By combining the power of blockchain technology with a social touch, NearSocialBoost empowers projects and amplifies connections within the Near Ecosystem.
 
