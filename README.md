@@ -6,6 +6,10 @@ NearSocialBoost is a revolutionary crowdfunding application built on the Near bl
 
 NearSocialBoost provides a decentralized platform for project creators to raise funds and gain recognition within the Near community. The application includes a decentralized autonomous organization (DAO) that plays a pivotal role in recognizing valuable projects and facilitating community engagement. Users can become members of the DAO by minting Membership NFTs and acquiring voting ERC-20 tokens. Proposals submitted to the DAO require a 10% voting favor to pass, ensuring a fair and transparent decision-making process.
 
+## Workflow
+
+![WhatsApp Image 2023-07-02 at 19 32 57](https://github.com/NIKU-SINGH/NearSocialBoost/assets/86917061/75190626-f812-4401-a6a2-39745643f02a)
+
 ## Benefits for the Near Ecosystem
 
 ### 1. Funding for Near Protocol Projects
