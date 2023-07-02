@@ -36,6 +36,11 @@ export const navlinks = [
     link: "/profile"
   },
   {
+    name: "dao",
+    imgUrl: withdraw,
+    link: "/dao"
+  },
+  {
     name: "Mint NFT",
     imgUrl: withdraw,
     link: "/dao",
