@@ -75,7 +75,7 @@ const DisplayCampaigns = (item: DisplayCampaignsCardProps) => {
     //   </Card>
     // </Grid.Col>
     <div className="flex flex-wrap items-center justify-center ">
-      <div className="m-4 cursor-pointer hover:shadow-2xl hover:shadow-cyan-500/50 ">
+      <div className="m-4 cursor-pointer hover:shadow-2xl hover:shadow-cyan-500/50 rounded-lg">
         <Card width="400px" onClick={handleCardClick}>
           <img
             src={item.image}

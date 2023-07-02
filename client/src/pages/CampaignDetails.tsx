@@ -78,14 +78,15 @@ const CampaignDetails = () => {
         </div>
 
         <Title order={1}>{typedState.title}</Title>
+       
       </div>
 
-      {/* <div className="flex flex-col text-center space-y-5">
+      <div className="flex flex-col text-center space-y-5">
           <Card radius="xl" p={0}>
             <Title p={15} order={2}>
               {typedState.amountCollected}
             </Title>
-            <Text bg="gray" p={15} className="rounded-lg mt-1 w-full">
+            <Text bg="gray" p={15} className="rounded-lg mt-1 w-full" >
               Raised of {typedState.target}{" "}
             </Text>
           </Card>
@@ -107,90 +108,88 @@ const CampaignDetails = () => {
               Total Backers
             </Text>
           </Card>
-        </div> */}
-
+        </div>
       <Grid.Container>
-        <Grid justify="" className="flex flex-wrap bg-red-400">
-          <div className="m-2">
-            <Card width="80%">
+        {/* <Grid justify="center" className="flex flex-wrap  w-full">
+          <div className="m-2 rounded-full">
+            <Card width="100%">
               <Text h4 my={0}>
-                Geist UI React
+                Raised of
               </Text>
-              <Text>Modern and minimalist React UI library.</Text>
-              <Card.Footer>
-                <Link
-                  color
-                  target="_blank"
-                  href="https://github.com/geist-org/geist-ui"
-                >
-                  Visit source code on GitHub.
-                </Link>
-              </Card.Footer>
-            </Card>
-          </div>
-          <div className="m-2">
-            <Card width="80%">
-              <Text h4 my={0}>
-                Geist UI React
-              </Text>
-              <Text>Modern and minimalist React UI library.</Text>
-              <Card.Footer>
-                <Link
-                  color
-                  target="_blank"
-                  href="https://github.com/geist-org/geist-ui"
-                >
-                  Visit source code on GitHub.
-                </Link>
-              </Card.Footer>
-            </Card>
-          </div>
-          <div className="m-2">
-            <Card width="80%">
-              <Text h4 my={0}>
-                Geist UI React
-              </Text>
-              <Text>Modern and minimalist React UI library.</Text>
-              <Card.Footer>
-                <Link
-                  color
-                  target="_blank"
-                  href="https://github.com/geist-org/geist-ui"
-                >
-                  Visit source code on GitHub.
-                </Link>
-              </Card.Footer>
-            </Card>
-          </div>
+              <div className="flex justify-between">
+                <Text> {typedState.amountCollected}</Text>
+                <Text> {typedState.target} </Text>
+              </div>
 
-          
-        </Grid>
+              <Card.Footer>
+                <Link
+                  target="_blank"
+                  href="https://github.com/geist-org/geist-ui"
+                >
+                  Visit source code on GitHub.
+                </Link>
+              </Card.Footer>
+            </Card>
+          </div>
+          <div className="m-2">
+            <Card width="100%">
+              <Text h4 my={0}>
+                Day left
+              </Text>
+              <Text>{daysLeft(typedState.deadline)}</Text>
+              <Card.Footer>
+                <Link
+                  target="_blank"
+                  href="https://github.com/geist-org/geist-ui"
+                >
+                  Visit source code on GitHub.
+                </Link>
+              </Card.Footer>
+            </Card>
+          </div>
+          <div className="m-2">
+            <Card width="100%">
+              <Text h4 my={0}>
+                Total Backers
+              </Text>
+              <Text>{typedState.donators.length}</Text>
+              <Card.Footer>
+                <Link
+                  target="_blank"
+                  href="https://github.com/geist-org/geist-ui"
+                >
+                  Visit source code on GitHub.
+                </Link>
+              </Card.Footer>
+            </Card>
+          </div>
+        </Grid> */}
       </Grid.Container>
       {/* </Flex> */}
 
-      {/* <div className="grid md:grid-cols-2 gap-5 ">
+      <div className="grid md:grid-cols-1 gap-5 ">
         <div>
           <div>
-            <Title order={3} mt={15}>
+            <Title order={1} mt={15}>
               Creator{" "}
             </Title>
-            <Text>{typedState.owner}</Text>
+            <Text blockquote="true">{typedState.owner}</Text>
           </div>
           <div>
-            <Title order={3} mt={15}>
+            <Title order={1} mt={15}>
               Story{" "}
             </Title>
-            <Text>{typedState.description}</Text>
+            <Text blockquote="true">{typedState.description}</Text>
           </div>
 
           <div>
-            <Title order={3} mt={15}>
+            <Title order={1} mt={15}>
               Donators{" "}
             </Title>
             {typedState.donators && typedState.donators.length > 0 ? (
               typedState.donators.map((donator: any) => <Text>{donator}</Text>)
             ) : (
-              <Text>No donators yet. Be the first one! </Text>
+              <Text blockquote="true">No donators yet. Be the first one! </Text>
             )}
           </div>
         </div>
@@ -237,7 +236,7 @@ const CampaignDetails = () => {
             )}
           </div>
         </div>
-      </div> */}
+      </div>
     </Container>
   );
 };
