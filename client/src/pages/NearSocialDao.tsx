@@ -176,9 +176,7 @@ import {
       return (
         <div className="landing">
           <Text h1 style = {{textAlign: 'center'}}>Welcome to Near Social Boost DAO</Text>
-          <Button type = "default" ghost>
-            <ConnectWallet theme='dark' />
-          </Button>
+            <ConnectWallet theme='light' />
         </div>
       );
     }

@@ -131,7 +131,7 @@ const DisplayCampaigns = (item: DisplayCampaignsCardProps) => {
               Visit source code on GitHub.
             </Link>
             <Button shadow type="secondary">
-              Shadow
+              View
             </Button>
           </Card.Footer>
         </Card>
