@@ -15,11 +15,12 @@ const Navbar = () => {
   console.log(buttonToggle,value)
 
   return (
-    <NavbarMantine
-      width={{ base: 180 }}
-      className="flex flex-col "
+    <div
+      // width={{ base: 240 }}
+      // height={{base:800}}
+      className="flex flex-col h-screen border-r-2 border-gray-700 "
     >
-      <div className="space-y-5 p-5 bg-black">
+      <div className="space-y-5 p-5 w-64 h-full mt-20">
         {navlinks.map((link) => (
           <div key={link.name} className="flex">
             <NavLink
@@ -33,14 +34,15 @@ const Navbar = () => {
                   navigate(link.link);
                 }
               }}
-              className="rounded-full capitalize"
-              // className={`bg-gray-200 capitalize  ${link.name === value? 'font-extrabold' : ''}`}
+              variant="filled"
+              childrenOffset={10}
+              className="rounded-lg capitalize"
               icon={<Image src={link.imgUrl} />}
             />
           </div>
         ))}
       </div>
-    </NavbarMantine>
+    </div>
   );
 };
 
