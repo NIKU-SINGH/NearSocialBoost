@@ -20,22 +20,25 @@ const Header = () => {
   return (
     <HeaderMantine
       style={{ background: "#000", color: "#fff" }}
-      height={60}
-      p="xs"
+      height={80}
+      p="md"
+      px="lg"
     >
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between mx-10">
         <div className="flex items-center cursor-pointer"
           onClick={() => navigate("/")}
         >
           <img src={ologo} alt="Logo" className="h-10 w-auto" />
         </div>
 
-        <div className="flex items-center space-x-5">
+        <div className="flex items-center space-x-5 rounded-full">
           
           <Input
             labelRight="🔍"
             placeholder="Search..."
             value=""
+            scale={2}
+            className="text-sm" 
             onChange={(e) => {}}
           />
 
