@@ -26,7 +26,7 @@ const App = () => {
             element={
               <AppShell padding="md" navbar={<Navbar />} header={<Header />}>
                 <Routes>
-                  <Route path="/home" element={<Home />} />
+                  <Route path="/dashboard" element={<Home />} />
                   <Route path="/profile" element={<Profile />} />
                   <Route path="/campaign" element={<CreateCampaign />} />
                   <Route path="/campaign-details/:id" element={<CampaignDetails />} />

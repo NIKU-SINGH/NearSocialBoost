@@ -71,9 +71,9 @@ export function Form<S extends z.ZodType<any, any>>({
         {submitText && (
           <Container>
             <Group position="center" mt="sm">
-              <ButtonGeist type="secondary" ghost loading={ctx.formState.isSubmitting}>
+              <Button type="submit" loading={ctx.formState.isSubmitting}>
                 {submitText}
-              </ButtonGeist>
+              </Button>
             </Group>
           </Container>
         )}

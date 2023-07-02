@@ -128,7 +128,7 @@ export default function Hero() {
                   </a> */}
                   <Grid.Container gap={4}>
                     <Grid className="space-x-4">
-                      <Button auto ghost scale={1.5} px={2} iconRight={<ArrowRightCircle/>} onClick = {() => navigate('/home')}>
+                      <Button auto ghost scale={1.5} px={2} iconRight={<ArrowRightCircle/>} onClick = {() => navigate('/dashboard')}>
                         Launch App
                       </Button>
                       <Button auto ghost scale={1.5} px={2} >Learn More</Button>
