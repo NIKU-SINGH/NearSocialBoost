@@ -17,23 +17,52 @@ const Home = () => {
       <Title align="center" mb={20}>
         All Campaigns
       </Title>
-
+{/* 
       <div className="flex flex-wrap items-center justify-center ">
-        <div className="m-4">
-          <Card width="400px">
+        <div className="m-4 cursor-pointer hover:shadow-2xl hover:shadow-cyan-500/50 ">
+          <Card width="500px">
             <img
               src="https://user-images.githubusercontent.com/11304944/76085431-fd036480-5fec-11ea-8412-9e581425344a.png"
               height="200px"
               width="400px"
               draggable={false}
             />
-            <Text h4 mb={0}>
-              Geist UI React
-            </Text>
-            <Text type="secondary" small>
-              Modern and minimalist React UI library.
-            </Text>
-            <Card.Footer>
+            <div className="">
+              <div className="flex justify-between m-4">
+                <Text h5>Geist UI React</Text>
+                <Text font="1rem" type="secondary" small className="">
+                  Modern and minimalist React UI library.
+                </Text>
+              </div>
+              <div className="flex justify-between m-4">
+                <Text h5>Geist UI React</Text>
+                <Text font="1rem" type="secondary" small className="">
+                  Modern and minimalist React UI library.
+                </Text>
+              </div>
+              <div className="flex justify-between m-4">
+                <Text h5>Geist UI React</Text>
+                <Text font="1rem" type="secondary" small className="">
+                  Modern and minimalist React UI library.
+                </Text>
+              </div>
+              <div className="flex justify-between m-4">
+                <Text h5>Geist UI React</Text>
+                <Text font="1rem" type="secondary" small className="">
+                  Modern and minimalist React UI library.
+                </Text>
+              </div>
+              <div className="flex justify-between m-4">
+                <Text p mt={0} type="secondary" >
+                  Specifies origins that are allowed to see values of attributes
+                  retrieved via features of the Resource Timing API, which would
+                  otherwise be reported as zero due to cross-origin
+                  restrictions.
+                </Text>
+              </div>
+            </div>
+
+            <Card.Footer className="flex justify-between">
               <Link
                 block
                 target="_blank"
@@ -41,15 +70,16 @@ const Home = () => {
               >
                 Visit source code on GitHub.
               </Link>
-              <Button shadow type="secondary">Shadow</Button>
+              <Button shadow type="secondary">
+                Shadow
+              </Button>
             </Card.Footer>
           </Card>
         </div>
-       
-        
-      </div>
+      </div> */}
+      
 
-      {/* {isLoading ? (
+      {isLoading ? (
         <Loading scale={3} />
       ) : (
         <Grid>
@@ -67,7 +97,7 @@ const Home = () => {
             );
           })}
         </Grid>
-      )} */}
+      )}
     </div>
   );
 };
