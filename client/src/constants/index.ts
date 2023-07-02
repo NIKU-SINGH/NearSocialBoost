@@ -1,24 +1,23 @@
 import {
   createCampaign,
   dashboard,
-  logout,
-  payment,
   profile,
   withdraw,
   notifications,
   chainlink,
 } from "../assets";
 
+
 export const navlinks = [
   {
     name: "dashboard",
     imgUrl: dashboard,
-    link: "/",
+    link: "/dashboard",
   },
   {
     name: "campaign",
     imgUrl: createCampaign,
-    link: "/create-campaign",
+    link: "/campaign",
   },
   {
     name: "analyse",
@@ -26,24 +25,19 @@ export const navlinks = [
     link: "/analyse",
   },
   {
-    name: "notifications",
-    imgUrl: notifications,
-    link: "/notifications",
-  },
-  {
     name: "Airdrop",
     imgUrl: withdraw,
-    link: "/claim",
+    link: "/airdrop",
     disabled: true
   },
   {
-    name: "my camps",
+    name: "profile",
     imgUrl: profile,
     link: "/profile"
   },
   {
-    name: "Claim NFTS",
+    name: "dao",
     imgUrl: withdraw,
-    link: "/claim",
+    link: "/dao"
   }
 ];

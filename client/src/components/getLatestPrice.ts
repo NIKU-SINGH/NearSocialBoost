@@ -1,11 +1,11 @@
 import { providers, Contract, BigNumber } from 'ethers'
 import { ethers } from 'ethers';
 
-const provider = new ethers.providers.JsonRpcProvider("https://sleek-lingering-market.ethereum-goerli.discover.quiknode.pro/3f5cc6bcbbd5bb4ac343e9673d1db6352f917c7f/");
+const provider = new ethers.providers.JsonRpcProvider("https://misty-spring-owl.matic-testnet.discover.quiknode.pro/99972ff680d83059157af961f7c14ad786e1a693/");
 // using QUICKNODE rpc PROVIDER
 
 const BTC_USD_RATE_ADDRESS = '0xA39434A63A52E749F02807ae27335515BA4b07F7';
-const ETH_USD_RATE_ADDRESS = "0xD4a33860578De61DBAbDc8BFdb98FD742fA7028e";
+const ETH_USD_RATE_ADDRESS = "xD4a33860578De61DBAbDc8BFdb98FD742fA7028e";
 const EUR_USD_RATE_ADDRESS = "0x44390589104C9164407A0E0562a9DBe6C24A0E05";
 
 

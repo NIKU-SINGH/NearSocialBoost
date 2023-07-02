@@ -1,4 +1,5 @@
-import { Alert, Container, Grid, Paper, Title } from "@mantine/core";
+import { Alert, Container, Grid, Paper} from "@mantine/core";
+import {Grid as GridGeist} from "@geist-ui/core"
 import { showNotification } from "@mantine/notifications";
 import { useNavigate } from "react-router-dom";
 import { z } from "zod";
@@ -7,6 +8,7 @@ import Form, { FormProps, FORM_ERROR } from "../components/Form";
 import LabeledTextField from "../components/FormField";
 import LabeledTextAreaField from "../components/TextAreaForm";
 import { useAppState } from "../context";
+import {Text} from "@geist-ui/core"
 
 export function CampaignForm<S extends z.ZodType<any, any>>(
   props: FormProps<S>
@@ -27,7 +29,7 @@ export function CampaignForm<S extends z.ZodType<any, any>>(
             <Grid.Col md={6}>
               <LabeledTextField
                 name="title"
-                label="Campaign Title"
+                label="Project Title"
                 placeholder="Write a Title"
                 required
               />
@@ -64,8 +66,8 @@ export function CampaignForm<S extends z.ZodType<any, any>>(
             <Grid.Col md={12}>
               <LabeledTextField
                 name="image"
-                label="Campaign Image "
-                placeholder="Place image url to represent your campaign"
+                label="Project Image "
+                placeholder="Place image url to represent your project"
                 required
               />
             </Grid.Col>
@@ -104,11 +106,11 @@ const CreateCampaign = () => {
   }
   return (
     <div>
-      <Title align="center" color="orange" order={1}>
-        Start a Campaign
-      </Title>
+      <Text h2 className = "text-center">
+        List your new Project
+      </Text>
       <CampaignForm
-        submitText="Submit new campaign"
+        submitText="List new project"
         schema={CreateCampaignValidation}
         initialValues={{}}
         onSubmit={async (values) => {
@@ -117,7 +119,7 @@ const CreateCampaign = () => {
               await createCampaign(values);
 
               console.log("values", values);
-              navigate("/");
+              navigate("/dashboard");
             }
           } catch (error: any) {
             console.error(error);

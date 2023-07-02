@@ -14,7 +14,7 @@ const Profile = () => {
     return (
       <div>
         <Alert color="red">
-          You need to connect your wallet to view thi profile page
+          You need to connect your wallet to view this profile page
         </Alert>
       </div>
     );

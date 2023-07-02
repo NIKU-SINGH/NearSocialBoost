@@ -1,12 +1,12 @@
 // @ts-nocheck
 import {
-  Card,
+  // Card,
   Container,
   Flex,
   Loader,
   LoadingOverlay,
-  Progress,
-  Text,
+  // Progress,
+  // Text,
   Title,
 } from "@mantine/core";
 import { showNotification } from "@mantine/notifications";
@@ -19,6 +19,7 @@ import { FORM_ERROR } from "../components/Form";
 import { FundForm } from "../components/FundForm";
 import { useAppState } from "../context";
 import { calculateBarPercentage, daysLeft } from "../utils";
+import { Progress, Grid, Text, Card, Link } from "@geist-ui/core";
 
 export const CreateFundValidation = z.object({
   amount: z.number().min(0.0000001),
@@ -59,31 +60,33 @@ const CampaignDetails = () => {
 
   return (
     <Container>
-      <Flex gap={5} justify="space-between">
+      {/* <Flex gap={5} justify="space-between"> */}
+      <div>
         <div>
-          <div>
-            <img
-              className="rounded-3xl  h-124 w-124  aspect-video"
-              src={typedState.image}
-              alt="Campaign"
-            />
+          <img
+            className="rounded-xl  h-124 w-124  aspect-video"
+            src={typedState.image}
+            alt="Campaign"
+          />
 
-            <div className="flex space-x-5 items-center my-5">
-              <Progress value={percent} className="w-full" />
+          <div className="flex space-x-5 items-center my-5">
+            {/* <Progress value={percent} className="w-full" /> */}
+            <Progress type="warning" value={percent} />
 
-              <Text className="whitespace-nowrap">{percent} %</Text>
-            </div>
+            <Text className="whitespace-nowrap">{percent} %</Text>
           </div>
-
-          <Title order={1}>{typedState.title}</Title>
         </div>
 
-        <div className="flex flex-col text-center space-y-5">
+        <Title order={1}>{typedState.title}</Title>
+       
+      </div>
+
+      <div className="flex flex-col text-center space-y-5">
           <Card radius="xl" p={0}>
             <Title p={15} order={2}>
               {typedState.amountCollected}
             </Title>
-            <Text bg="gray" p={15} className="rounded-lg mt-1 w-full">
+            <Text bg="gray" p={15} className="rounded-lg mt-1 w-full" >
               Raised of {typedState.target}{" "}
             </Text>
           </Card>
@@ -106,31 +109,87 @@ const CampaignDetails = () => {
             </Text>
           </Card>
         </div>
-      </Flex>
+      <Grid.Container>
+        {/* <Grid justify="center" className="flex flex-wrap  w-full">
+          <div className="m-2 rounded-full">
+            <Card width="100%">
+              <Text h4 my={0}>
+                Raised of
+              </Text>
+              <div className="flex justify-between">
+                <Text> {typedState.amountCollected}</Text>
+                <Text> {typedState.target} </Text>
+              </div>
 
-      <div className="grid md:grid-cols-2 gap-5 ">
+              <Card.Footer>
+                <Link
+                  target="_blank"
+                  href="https://github.com/geist-org/geist-ui"
+                >
+                  Visit source code on GitHub.
+                </Link>
+              </Card.Footer>
+            </Card>
+          </div>
+          <div className="m-2">
+            <Card width="100%">
+              <Text h4 my={0}>
+                Day left
+              </Text>
+              <Text>{daysLeft(typedState.deadline)}</Text>
+              <Card.Footer>
+                <Link
+                  target="_blank"
+                  href="https://github.com/geist-org/geist-ui"
+                >
+                  Visit source code on GitHub.
+                </Link>
+              </Card.Footer>
+            </Card>
+          </div>
+          <div className="m-2">
+            <Card width="100%">
+              <Text h4 my={0}>
+                Total Backers
+              </Text>
+              <Text>{typedState.donators.length}</Text>
+              <Card.Footer>
+                <Link
+                  target="_blank"
+                  href="https://github.com/geist-org/geist-ui"
+                >
+                  Visit source code on GitHub.
+                </Link>
+              </Card.Footer>
+            </Card>
+          </div>
+        </Grid> */}
+      </Grid.Container>
+      {/* </Flex> */}
+
+      <div className="grid md:grid-cols-1 gap-5 ">
         <div>
           <div>
-            <Title order={3} mt={15}>
+            <Title order={1} mt={15}>
               Creator{" "}
             </Title>
-            <Text>{typedState.owner}</Text>
+            <Text blockquote="true">{typedState.owner}</Text>
           </div>
           <div>
-            <Title order={3} mt={15}>
+            <Title order={1} mt={15}>
               Story{" "}
             </Title>
-            <Text>{typedState.description}</Text>
+            <Text blockquote="true">{typedState.description}</Text>
           </div>
 
           <div>
-            <Title order={3} mt={15}>
+            <Title order={1} mt={15}>
               Donators{" "}
             </Title>
             {typedState.donators && typedState.donators.length > 0 ? (
               typedState.donators.map((donator: any) => <Text>{donator}</Text>)
             ) : (
-              <Text>No donators yet. Be the first one! </Text>
+              <Text blockquote="true">No donators yet. Be the first one! </Text>
             )}
           </div>
         </div>
@@ -138,11 +197,10 @@ const CampaignDetails = () => {
         <div>
           <div className="my-6">
             {!address ? (
-              <Text>You need to connect your wallet to fund this campaign</Text>
+              <Text>You need to connect your wallet to fund this project</Text>
             ) : (
-            
               <FundForm
-                submitText="Fund Campaign"
+                submitText="Fund this Project"
                 schema={CreateFundValidation}
                 initialValues={{}}
                 onSubmit={async (values) => {

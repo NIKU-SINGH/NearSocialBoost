@@ -7,9 +7,10 @@ import {
 import { Button, Input } from "@geist-ui/core";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { ologo, thirdweb } from "../assets";
+import { ologo, thirdweb,name } from "../assets";
 import { useAppState } from "../context";
 import "./Header.css";
+import { ConnectWallet } from "@thirdweb-dev/react";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -19,36 +20,30 @@ const Header = () => {
   return (
     <HeaderMantine
       style={{ background: "#000", color: "#fff" }}
-      height={60}
-      p="xs"
+      height={80}
+      p="md"
+      px="lg"
     >
-      <div className="flex items-center justify-between">
-        <div className="flex items-center">
-          <img src={ologo} alt="Logo" className="h-10 w-auto" />
+      <div className="flex items-center justify-between mx-10">
+        <div className="flex items-center cursor-pointer"
+          onClick={() => navigate("/")}
+        >
+          {/* Logo */}
+          <img src={name} alt="Logo" className="h-10 w-auto" />
         </div>
 
-        <div className="flex items-center space-x-5">
+        <div className="flex items-center space-x-5 rounded-full">
+          
           <Input
             labelRight="🔍"
             placeholder="Search..."
             value=""
+            scale={2}
+            className="text-sm" 
             onChange={(e) => {}}
           />
 
-          <Button
-            loading={isLoading}
-            onClick={async () => {
-              if (address) {
-                navigate("/create-campaign");
-              } else {
-                setIsLoading(true);
-                if (connect) await connect();
-                setIsLoading(false);
-              }
-            }}
-          >
-            {address ? `Create a Campaign` : `Connect`}
-          </Button>
+          <ConnectWallet />
 
           <Link to="/profile">
             <Avatar

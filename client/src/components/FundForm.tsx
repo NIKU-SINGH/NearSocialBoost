@@ -8,7 +8,7 @@ export function FundForm<S extends z.ZodType<any, any>>(props: FormProps<S>) {
     <Form<S> {...props}>
       <Paper bg="gray" shadow="sm" radius="md" p="xl" className="space-y-10">
         <Title align="center" order={3}>
-          Back the Campaign 
+          Back the Project 
         </Title>
         <LabeledTextField
           name="amount"
