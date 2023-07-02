@@ -8,6 +8,7 @@ import {
     useNFTBalance,
   } from '@thirdweb-dev/react';
   import { useState, useEffect, useMemo } from 'react';
+  import { Text,Button } from '@geist-ui/core';
   import { AddressZero } from '@ethersproject/constants';
   
   const NearSocialDao = () => {
@@ -159,12 +160,12 @@ import {
   
     if (address && network?.[0].data.chain.id !== 1313161555) {
       return (
-        <div className="unsupported-network">
-          <h2>Please connect to Mumbai</h2>
-          <p>
+        <div className="unsupported-network flex flex-col justify-center">
+          <Text h2>Please connect to Mumbai</Text>
+          <Text h5 blockquote type = "warning">
             The DAO is built on the AuroraTestnet network, please switch networks in
             your connected wallet.
-          </p>
+          </Text>
         </div>
       );
     }
@@ -174,10 +175,10 @@ import {
     if (!address) {
       return (
         <div className="landing">
-          <h1>Welcome to Near Social Boost DAO</h1>
-          <div className="btn-hero">
-            <ConnectWallet theme='light' />
-          </div>
+          <Text h1 style = {{textAlign: 'center'}}>Welcome to Near Social Boost DAO</Text>
+          <Button type = "default" ghost>
+            <ConnectWallet theme='dark' />
+          </Button>
         </div>
       );
     }
@@ -187,24 +188,24 @@ import {
     if (hasClaimedNFT) {
       return (
         <div className="member-page">
-          <h1>🍪DAO Member Page</h1>
-          <p>Congratulations on being a member</p>
+          <Text h1>🍪DAO Member Page</Text>
+          <Text p>Congratulations on being a member</Text>
           <div>
             <div>
-              <h2>Member List</h2>
+              <Text h2>Member List</Text>
               <table className="card">
                 <thead>
                   <tr>
-                    <th>Address</th>
-                    <th>Token Amount</th>
+                    <Text p b>Address</Text>
+                    <Text p b>Token Amount</Text>
                   </tr>
                 </thead>
                 <tbody>
                   {memberList.map((member) => {
                     return (
                       <tr key={member.address}>
-                        <td>{shortenAddress(member.address)}</td>
-                        <td>{member.tokenAmount}</td>
+                        <Text p>{shortenAddress(member.address)}</Text>
+                        <Text p>{member.tokenAmount}</Text>
                       </tr>
                     );
                   })}
@@ -212,7 +213,7 @@ import {
               </table>
             </div>
             <div>
-              <h2>Active Proposals</h2>
+              <Text h2>Active Proposals</Text>
               <form
                 onSubmit={async (e) => {
                   e.preventDefault();
@@ -300,7 +301,7 @@ import {
               >
                 {proposals.map((proposal) => (
                   <div key={proposal.proposalId} className="card">
-                    <h5>{proposal.description}</h5>
+                    <Text h5>{proposal.description}</Text>
                     <div>
                       {proposal.votes.map(({ type, label }) => (
                         <div key={type}>
@@ -343,7 +344,7 @@ import {
     // Render mint nft screen.
     return (
       <div className="mint-nft">
-        <h1>Mint your free 🍪DAO Membership NFT</h1>
+        <Text h1 style = {{textAlign: 'center'}}>Welcome to Near Social Boost DAO</Text>
         <div className="btn-hero">
           <Web3Button
             contractAddress={editionDropAddress}

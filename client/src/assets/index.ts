@@ -16,6 +16,7 @@ import chainlink from './chainlink.svg';
 import ologo from './ologo.svg';
 import eur from './eur.png';
 import btc from './btc.png';
+import name from './name.svg'
 
 export {
   tagType,
@@ -36,4 +37,5 @@ export {
   ologo,
   eur,
   btc,
+  name,
 };

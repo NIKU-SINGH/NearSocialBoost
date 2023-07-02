@@ -7,9 +7,6 @@ import {
   chainlink,
 } from "../assets";
 
-import { Airplay } from '@geist-ui/icons'
-
-console.log(Airplay)
 
 export const navlinks = [
   {
@@ -39,8 +36,8 @@ export const navlinks = [
     link: "/profile"
   },
   {
-    name: "Claim NFTs",
+    name: "Mint NFT",
     imgUrl: withdraw,
-    link: "/claim",
+    link: "/dao",
   }
 ];

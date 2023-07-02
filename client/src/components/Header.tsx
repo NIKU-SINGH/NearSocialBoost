@@ -7,7 +7,7 @@ import {
 import { Button, Input } from "@geist-ui/core";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { ologo, thirdweb } from "../assets";
+import { ologo, thirdweb,name } from "../assets";
 import { useAppState } from "../context";
 import "./Header.css";
 import { ConnectWallet } from "@thirdweb-dev/react";
@@ -29,8 +29,7 @@ const Header = () => {
           onClick={() => navigate("/")}
         >
           {/* Logo */}
-          <img src={ologo} alt="Logo" className="h-10 w-auto" />
-          <p className="font-Inter text-lg ml-4 font-semibold">Near Social Boost</p>
+          <img src={name} alt="Logo" className="h-10 w-auto" />
         </div>
 
         <div className="flex items-center space-x-5 rounded-full">
