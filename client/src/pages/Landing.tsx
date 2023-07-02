@@ -80,26 +80,26 @@ export default function Hero() {
                 
               <span
                 className="span-anim"
-                data-content="Fund"
+                data-content="Back"
                 style={{ "--start-color": "red", "--end-color": "orange", "--delay": 0, color: "white", marginRight: "30px" } as React.CSSProperties}
               >
-                Fund
+                Back
               </span>
 
               <span
                 className="span-anim"
-                data-content="Your"
+                data-content="Best"
                 style={{ "--start-color": "blue", "--end-color": "cyan", "--delay": 2, color: "white", marginRight: "30px" } as React.CSSProperties}
               >
-                Your
+                Best
               </span>
 
               <span
                 className="span-anim"
-                data-content="Future"
+                data-content="Projects"
                 style={{ "--start-color": "green", "--end-color": "lime", "--delay": 4, color: "white", marginRight: "30px" } as React.CSSProperties}
               >
-                Future
+                Projects
               </span>
             </div>
 
@@ -112,7 +112,7 @@ export default function Hero() {
                 data-aos="zoom-y-out"
                 data-aos-delay="150"
               >
-                Empower Dreams, Securely Funded: Fund Your Future on <b>NEAR</b> Protocol <br/> Where Crowdfunding Meets NFTs for Social Good!
+                Empower Dreams, Securely Funded: Fund the best Projects on <b>NEAR</b> Protocol <br/> Where Crowdfunding Shakes hands with DAO for Social Good!
               </p>
               <div
                 className=" flex flex-wrap max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center"

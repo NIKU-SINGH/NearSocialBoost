@@ -353,11 +353,11 @@ import {
             }}
             onSuccess={() => {
               console.log(
-                `🌊 Successfully Minted! Check it out on OpenSea: https://testnets.opensea.io/assets/${editionDrop.getAddress()}/0`,
+                `🌊 Successfully Claimed the NFT! Check it out on OpenSea: https://testnets.opensea.io/assets/${editionDrop.getAddress()}/0`,
               );
             }}
             onError={(error) => {
-              console.error('Failed to mint NFT', error);
+              console.error('Failed to claim NFT', error);
             }}
           >
             Mint your Membership NFT
