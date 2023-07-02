@@ -360,7 +360,7 @@ import {
               console.error('Failed to mint NFT', error);
             }}
           >
-            Mint your NFT (FREE)
+            Mint your Membership NFT
           </Web3Button>
         </div>
       </div>

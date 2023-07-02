@@ -147,7 +147,6 @@ const CampaignDetails = () => {
                 initialValues={{}}
                 onSubmit={async (values) => {
                   try {
-                    sendTransaction();
                     await donateCampaign([
                       typedState.id,
                       {
